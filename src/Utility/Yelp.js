@@ -35,9 +35,7 @@ const Yelp = {
         } catch (error) {
             console.error('Failed to fetch Yelp data:', error);
             return [];
-        }
-        
-        console.log(response);
+        }        
     },
 };
 
