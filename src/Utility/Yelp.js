@@ -5,7 +5,8 @@ const Yelp = {
         const url = `${apiUrl}/api/yelp?categories=${encodeURIComponent(categories)}&location=${encodeURIComponent(location)}&sortBy=${encodeURIComponent(sortBy)}`;
 
         try {
-            const response = await fetch(url);
+            const response = await fetch('/api/yelp?categories=Tacos&location=Dallas&sortBy=best_match');
+
         
             if (!response.ok) {
                 const errorText = await response.text();
@@ -32,7 +33,7 @@ const Yelp = {
         } catch (error) {
             console.error('Failed to fetch Yelp data:', error);
             return [];
-        }        
+        }      
     },
 };
 
