@@ -1,3 +1,5 @@
+// Yelp.js
+
 const Yelp = {
     async search(categories, location, sortBy) {
         const apiUrl = process.env.REACT_APP_API_URL;
@@ -5,13 +7,15 @@ const Yelp = {
 
         try {
             const response = await fetch(url);
-
+        
             if (!response.ok) {
+                const errorText = await response.text();
+                console.error('Error response from server:', errorText);
                 throw new Error('Network response was not ok');
             }
-
+        
             const jsonResponse = await response.json();
-
+            // Process jsonResponse...
             if (jsonResponse.businesses) {
                 return jsonResponse.businesses.map((restaurant) => ({
                     id: restaurant.id,
@@ -30,6 +34,7 @@ const Yelp = {
             console.error('Failed to fetch Yelp data:', error);
             return [];
         }
+        
     },
 };
 

@@ -1,3 +1,5 @@
+// server.mjs
+
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -24,7 +26,7 @@ app.use(express.json()); // Parse JSON bodies
 app.get('/api/yelp', async (req, res) => {
     const { categories, location, sortBy } = req.query;
 
-    const url = `${baseUrl}?term=${encodeURIComponent(categories)}/Restaurant&location=${encodeURIComponent(location)}&radius=10000&sort_by=${encodeURIComponent(sortBy)}&limit=50`;
+    const url = `${baseUrl}?term=${encodeURIComponent(categories)} Restaurant&location=${encodeURIComponent(location)}&radius=10000&sort_by=${encodeURIComponent(sortBy)}&limit=50`;
 
     try {
         const response = await fetch(url, {
