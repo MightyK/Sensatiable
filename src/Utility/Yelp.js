@@ -1,5 +1,7 @@
 // Yelp.js
 
+import { response } from "express";
+
 const Yelp = {
     async search(categories, location, sortBy) {
         const apiUrl = process.env.REACT_APP_API_URL;
@@ -32,6 +34,7 @@ const Yelp = {
             }
         } catch (error) {
             console.error('Failed to fetch Yelp data:', error);
+            console.log(response);
             return [];
         }
         
