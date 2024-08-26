@@ -1,7 +1,4 @@
 // Yelp.js
-
-import { response } from "express";
-
 const Yelp = {
     async search(categories, location, sortBy) {
         const apiUrl = process.env.REACT_APP_API_URL;
