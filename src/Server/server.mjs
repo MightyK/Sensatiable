@@ -11,11 +11,13 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3001;
 
-const apiKey = process.env.YELP_API_KEY; // Store API key in .env as well
+const apiKey = process.env.YELP_API_KEY; 
 const baseUrl = process.env.YELP_API_URL;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'https://sensatiable-v2-daba7050f8d7.herokuapp.com/'
+}));
 app.use(express.json()); // Parse JSON bodies
 
 // API endpoint for Yelp data

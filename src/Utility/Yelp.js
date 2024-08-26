@@ -1,7 +1,7 @@
 const Yelp = {
     async search(categories, location, sortBy) {
-        const port = process.env.PORT || 3001;
-        const url = `http://localhost:${port}/api/yelp?categories=${encodeURIComponent(categories)}&location=${encodeURIComponent(location)}&sortBy=${encodeURIComponent(sortBy)}`;
+        const apiUrl = process.env.REACT_APP_API_URL;
+        const url = `${apiUrl}/api/yelp?categories=${encodeURIComponent(categories)}&location=${encodeURIComponent(location)}&sortBy=${encodeURIComponent(sortBy)}`;
 
         try {
             const response = await fetch(url);
