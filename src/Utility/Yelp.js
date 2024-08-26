@@ -1,6 +1,6 @@
 const Yelp = {
     async search(categories, location, sortBy) {
-        const apiUrl = process.env.REACT_APP_API_URL;
+        const apiUrl = process.env.YELP_API_URL;
         const url = `${apiUrl}/api/yelp?categories=${encodeURIComponent(categories)}&location=${encodeURIComponent(location)}&sortBy=${encodeURIComponent(sortBy)}`;
 
         try {
