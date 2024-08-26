@@ -34,10 +34,10 @@ const Yelp = {
             }
         } catch (error) {
             console.error('Failed to fetch Yelp data:', error);
-            console.log(response);
             return [];
         }
         
+        console.log(response);
     },
 };
 
