@@ -1,0 +1,15 @@
+.RestaurantList {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 4.4rem;
+    margin-top: 2rem;
+    border-radius: 2rem;
+    background-color: rgba(232, 226, 226, 0.433);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1;
+}
