@@ -1,11 +1,10 @@
 // Yelp.js
 const Yelp = {
     async search(categories, location, sortBy) {
-        const apiUrl = process.env.REACT_APP_API_URL;
-        const url = `${apiUrl}/api/yelp?categories=${encodeURIComponent(categories)}&location=${encodeURIComponent(location)}&sortBy=${encodeURIComponent(sortBy)}`;
+        const url = `/api/yelp?categories=${encodeURIComponent(categories)}&location=${encodeURIComponent(location)}&sortBy=${encodeURIComponent(sortBy)}`;
 
         try {
-            const response = await fetch('/api/yelp?categories=Tacos&location=Dallas&sortBy=best_match');
+            const response = await fetch(url);
 
         
             if (!response.ok) {
