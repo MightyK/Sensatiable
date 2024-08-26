@@ -44,11 +44,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, '../../client/build')));
+app.use(express.static(path.join(__dirname, '../../build')));
 
 // Serve the React app for any other routes
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../client/build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../../build', 'index.html'));
 });
 
 app.listen(port, () => {
