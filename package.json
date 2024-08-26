@@ -17,10 +17,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "url": "^0.11.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm run dev",
+    "start": "node src/Server/server.mjs",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon src/Server/server.mjs",
     "build": "react-scripts build",
@@ -45,8 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    
   }
 }
