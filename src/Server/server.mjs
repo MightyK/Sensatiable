@@ -3,12 +3,16 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import fetch from 'node-fetch';
 import cors from 'cors';
+import dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3001;
 
-const apiKey = 'nMnfo1qmxeP0tZLGMXiBkrm4ZpRU2q0NWsSUszSCOZRNclhOa5lUcSGEydr4CgOxct0UPjvmwXUCtj7wxAqVWlJOKxwF1zRkFC6e5EY_x4JBMtFfuSFq2h2eZfwhZXYx';
-const baseUrl = 'https://api.yelp.com/v3/businesses/search';
+const apiKey = process.env.YELP_API_KEY; // Store API key in .env as well
+const baseUrl = process.env.YELP_API_URL;
 
 // Middleware
 app.use(cors());
